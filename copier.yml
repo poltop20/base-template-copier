@@ -1,0 +1,35 @@
+# List questions that will be prompted to the user
+questions:
+ questions:
+  - variable: project_name
+    prompt: "What is the name of your project?"
+    
+
+  - variable: author_name
+    prompt: "What is your name?"
+   
+
+# List files or directories that will be skipped when copying the template
+skip_if_exists:
+  - .gitignore
+
+# List additional files or directories that will be included in the copy of the template
+extra_paths:
+  - terraform/
+
+# Define the list of files that should be copied to the destination project
+defaults:
+  - name: LICENSE
+    options: skip_if_exists
+  - name: .gitattributes
+    options: skip_if_exists
+  - name: .gitignore
+    options: skip_if_exists
+  - name: .dockerignore
+    options: skip_if_exists
+  - name: .editorconfig
+    options: skip_if_exists
+  - name: tool-versions
+    options: skip_if_exists
+  - name: terraform/
+    options: extra_paths
